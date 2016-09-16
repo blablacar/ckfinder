@@ -43,6 +43,8 @@ function s3_con()
         $GLOBALS['config']['AmazonS3']['SslUse'],
         $GLOBALS['config']['AmazonS3']['BaseUrl']
     );
+    $s3->setProxy($GLOBALS['config']['AmazonS3']['Proxy']);
+
     return $s3;
 }
 
