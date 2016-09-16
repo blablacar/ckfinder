@@ -75,7 +75,9 @@ function s3_con()
 	require_once CKFINDER_CONNECTOR_LIB_DIR.'/Utils/AmazonS3.php';
 	
         $s3 = new S3($config['AmazonS3']['AccessKey'], $config['AmazonS3']['SecretKey']);
-        $s3->setProxy($config['AmazonS3']['Proxy']);
+        if (null !== $proxy = $config['AmazonS3']['Proxy']) {
+            $s3->setProxy($proxy);
+        }
 
     return $s3;
 }
