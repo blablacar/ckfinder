@@ -172,7 +172,7 @@ class S3
 	* @param constant $type CURL proxy type
 	* @return void
 	*/
-	public static function setProxy($host, $user = null, $pass = null, $type = CURLPROXY_SOCKS5)
+	public static function setProxy($host, $user = null, $pass = null, $type = CURLPROXY_HTTP)
 	{
 		self::$proxy = array('host' => $host, 'type' => $type, 'user' => null, 'pass' => 'null');
 	}
